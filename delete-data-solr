@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# UI
+# Document 
+# Request-Handler (qt)
+# /update
+# Document Type
+# XML
+# Document(s)
+# <delete><query>*:*</query></delete><commit/>
+# 
+# Submit Document
+curl  http://localhost:8983/update --data-binary  "<delete><query>*:*</query></delete>"  -H 'Content- type :text/xml; charset=utf-8'  
+curl  http://localhost:8983/update --data-binary  "<commit/>"  -H 'Content- type:text/xml; charset=utf-8'  
+
