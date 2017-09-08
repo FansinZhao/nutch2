@@ -3,9 +3,9 @@ FROM openjdk:alpine
 MAINTAINER FansinZhao 171388204@qq.com
 
 #install required software
-#http://mirror.bit.edu.cn/apache/hadoop/common/hadoop-2.8.1/hadoop-2.8.1.tar.gz
+#
 RUN apk add --no-cache bash openssh-server openssh-client rsync && \
-    wget -O hadoop-2.8.1.tar.gz http://172.17.0.4/hadoop-2.8.1.tar.gz && \
+    wget -O hadoop-2.8.1.tar.gz http://mirror.bit.edu.cn/apache/hadoop/common/hadoop-2.8.1/hadoop-2.8.1.tar.gz && \
     tar -zxvf hadoop-2.8.1.tar.gz && \
     rm -r hadoop-2.8.1/share/doc && \
     rm hadoop-2.8.1.tar.gz
