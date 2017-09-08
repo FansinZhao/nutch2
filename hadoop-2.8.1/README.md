@@ -1,9 +1,9 @@
-#fansin/hadoop
+# fansin/hadoop
 
 基于openjdk:alpine镜像,集成了hadoop2.8.1,镜像为简单单机镜像,创建容器成功后,
 将会启动三个进程(节点),namenode,secondarynamenode,datanode.
 
-#HOW TO USE
+# HOW TO USE
 
     docker run --name my-hadoop -itd fansin/hadoop
 
@@ -15,13 +15,13 @@
 
     docker logs -f my-hadoop
 
-#CUSTOMIZE
+# CUSTOMIZE
 
 hadoop安装位置: ｀／hadoop-2.8.1｀,可以通过覆盖或挂载相关配置文件
 
     docker cp configfile my-hadoop:/hadoop-2.8.1/configfile
 
-#QUESTIONS
+# QUESTIONS
 
  FansinZhao 171388204@qq.com
 
