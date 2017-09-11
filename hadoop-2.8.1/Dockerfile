@@ -12,12 +12,10 @@ RUN apk add --no-cache bash openssh-server openssh-client rsync && \
 
 #generate ssh key
 RUN ssh-keygen -A && \
-    ssh-keygen -q -N "" -t rsa -f /etc/ssh/id_rsa && \
-    cp /etc/ssh/id_rsa.pub /etc/ssh/authorized_keys && \
     mkdir -p /root/.ssh && \
-    cp -f /etc/ssh/ssh_config /root/.ssh/config && \
-    cp /etc/ssh/authorized_keys /root/.ssh/authorized_keys && \
-    cp /etc/ssh/id_rsa /root/.ssh/id_rsa
+    cp /etc/ssh/ssh_host_rsa_key /root/.ssh/id_rsa && \
+    cp /etc/ssh/ssh_host_rsa_key.pub /root/.ssh/id_rsa.pub && \
+    cp /etc/ssh/ssh_host_rsa_key.pub /root/.ssh/authorized_keys
 
 #skip input yes    
 RUN sed -i 's/#   StrictHostKeyChecking ask/   StrictHostKeyChecking no/g' /etc/ssh/ssh_config
